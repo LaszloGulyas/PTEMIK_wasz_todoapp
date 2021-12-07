@@ -13,5 +13,10 @@ namespace TM7XCOToDoApp
         {
 
         }
+
+        protected void InsertButton_Click(object sender, EventArgs e)
+        {
+            ((TextBox)FormView1.FindControl("TaskDateOfCreationTextBox")).Text = DateTime.Now.ToString();
+        }
     }
 }
