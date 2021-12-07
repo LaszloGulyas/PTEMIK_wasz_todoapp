@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title>ToDoApp</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -39,7 +39,7 @@
 
         <div class="container body-content">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <a class="navbar-brand" href="#">Navbar</a>
+              <a class="navbar-brand">Menu</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -49,13 +49,13 @@
                     <a class="nav-link" href="Default.aspx">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="TaskCompleted.aspx">Completed</a>
-                  </li>
-                  <li class="nav-item">
                     <a class="nav-link" href="TaskDashboard.aspx">Dashboard</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="TaskInputForm.aspx">New Task</a>
+                    <a class="nav-link" href="TaskCompleted.aspx">Completed</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light btn btn-info btn-sm" style="width: 100px;" href="TaskInputForm.aspx">New Task</a>
                   </li>
                 </ul>
               </div>
@@ -67,7 +67,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>FOOTER HERE</p>
+                <p class="text-muted text-right font-font-weight-light font-italic">created by Gulyás László TM7XCO</p>
             </footer>
         </div>
 
