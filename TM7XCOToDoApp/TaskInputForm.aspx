@@ -4,13 +4,13 @@
     <div class="mx-auto" style="width: 300px;">
         <asp:FormView ID="FormView1" CssClass="m-3" runat="server" DataSourceID="SqlDataSourceTasksInsert" DefaultMode="Insert" DataKeyNames="TaskID">
             <InsertItemTemplate>
-                Task:<br />
+                <p class="font-weight-bold">Task:</p>
                 <asp:TextBox ID="TaskNameTextBox" style="height:80px; width:100%;"  runat="server" Text='<%# Bind("TaskName") %>' TextMode="MultiLine" />
                 <br /><br />
-                Description:<br />
+                <p class="font-weight-bold">Description:</p>
                 <asp:TextBox ID="TaskDescriptionTextBox" style="height:200px; width:100%" runat="server" Text='<%# Bind("TaskDescription") %>' TextMode="MultiLine" />
                 <br /><br />
-                Deadline:<br />
+                <p class="font-weight-bold">Deadline:</p>
                 <asp:TextBox ID="TaskDueDateTextBox" style="height:40px; width:100%;" runat="server" Text='<%# Bind("TaskDueDate") %>' TextMode="DateTime" />
                 <asp:TextBox ID="TaskDateOfCreationTextBox" runat="server" Text='<%# Bind("TaskDateOfCreation") %>' TextMode="DateTime" Visible="False" />
                 <br />
