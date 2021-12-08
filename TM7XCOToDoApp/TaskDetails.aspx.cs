@@ -11,7 +11,7 @@ namespace TM7XCOToDoApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            String taskID = Request.QueryString["id"];
         }
     }
 }

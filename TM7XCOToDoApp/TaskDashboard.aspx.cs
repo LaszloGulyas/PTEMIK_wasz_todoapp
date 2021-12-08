@@ -14,9 +14,10 @@ namespace TM7XCOToDoApp
 
         }
 
-        protected void taskDoneButton_Click(object sender, EventArgs e)
+        protected void taskDetailsButton_Click(object sender, EventArgs e)
         {
-            //....
+            String taskID = ((LinkButton) sender).CommandArgument;
+            Response.Redirect("TaskDetails.aspx?id=" + taskID);
         }
     }
 }
