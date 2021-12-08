@@ -15,49 +15,49 @@ namespace TM7XCOToDoApp
     {
 
         /// <summary>
-        /// GridView3 control.
+        /// GridViewTasksDaily control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView3;
+        protected global::System.Web.UI.WebControls.GridView GridViewTasksDaily;
 
         /// <summary>
-        /// SqlDataSourceDaily control.
+        /// SqlDataSourceTasksDaily control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceDaily;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceTasksDaily;
 
         /// <summary>
-        /// GridView2 control.
+        /// GridViewTasksWeekly control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView2;
+        protected global::System.Web.UI.WebControls.GridView GridViewTasksWeekly;
 
         /// <summary>
-        /// SqlDataSourceWeekly control.
+        /// SqlDataSourceTasksWeekly control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceWeekly;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceTasksWeekly;
 
         /// <summary>
-        /// GridView1 control.
+        /// GridViewTasksMonthly control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView GridViewTasksMonthly;
 
         /// <summary>
         /// SqlDataSourceTasksMonthly control.
