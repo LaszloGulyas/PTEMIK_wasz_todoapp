@@ -11,7 +11,18 @@ namespace TM7XCOToDoApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            String taskID = Request.QueryString["id"];
+            if(!IsPostBack)
+            {
+                String taskID = Request.QueryString["id"];
+
+                SqlDataSourceTaskDetails.SelectParameters.Add("TaskID", taskID);
+            }
+
+        }
+
+        protected void EditButton_Click(object sender, EventArgs e)
+        {
+            FormViewTaskDetails.ChangeMode(FormViewMode.Edit);
         }
     }
 }
