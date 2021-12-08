@@ -28,6 +28,5 @@
                 <asp:Parameter Name="TaskIsCompleted" Type="Boolean" DefaultValue="false" />
             </InsertParameters>
         </asp:SqlDataSource>
-        <asp:SqlDataSource ID="SqlDataSourceTasks" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [TaskName], [TaskDescription], [TaskDueDate], [TaskDateOfCreation] FROM [Tasks]"></asp:SqlDataSource>
     </div>
 </asp:Content>
