@@ -4,39 +4,41 @@
     <div class="mx-auto" style="width: 300px;">
         <asp:FormView ID="FormViewTaskDetails" runat="server" DataKeyNames="TaskID" DataSourceID="SqlDataSourceTaskDetails">
             <EditItemTemplate>
-                TaskName:
-                <asp:TextBox ID="TaskNameTextBox" runat="server" Text='<%# Bind("TaskName") %>' />
+                <p class="m-0 font-weight-bold text-light pl-1" style="background-color:slategray">Task:</p>
+                <asp:TextBox ID="TaskNameTextBox" runat="server" CssClass="mb-3 mt-1 p-1 w-100 border-secondary" Text='<%# Bind("TaskName") %>' TextMode="MultiLine" />
                 <br />
-                TaskDescription:
-                <asp:TextBox ID="TaskDescriptionTextBox" runat="server" Text='<%# Bind("TaskDescription") %>' />
+                <p class="m-0 font-weight-bold text-light pl-1" style="background-color:slategray">Description:</p>
+                <asp:TextBox ID="TaskDescriptionTextBox" runat="server" CssClass="mb-3 mt-1 p-1 w-100 border-secondary" style="height:200px;" Text='<%# Bind("TaskDescription") %>' TextMode="MultiLine" />
                 <br />
-                TaskDateOfCreation:
-                <asp:TextBox ID="TaskDateOfCreationTextBox" runat="server" Text='<%# Bind("TaskDateOfCreation") %>' ReadOnly="true"/>
+                <p class="m-0 font-weight-bold text-light pl-1" style="background-color:slategray">Created:</p>
+                <asp:TextBox ID="TaskDateOfCreationTextBox" runat="server" CssClass="border-0 mb-3 mt-1 p-1 w-100" Text='<%# Bind("TaskDateOfCreation") %>' ReadOnly="true" Enabled="false" />
                 <br />
-                TaskDueDate:
-                <asp:TextBox ID="TaskDueDateTextBox" runat="server" Text='<%# Bind("TaskDueDate") %>' />
+                <p class="m-0 font-weight-bold text-light pl-1" style="background-color:slategray">Deadline:</p>
+                <asp:TextBox ID="TaskDueDateTextBox" runat="server" CssClass="mb-3 mt-1 p-1 w-100" Text='<%# Bind("TaskDueDate") %>' TextMode="DateTime" />
+                <br />                
+                <p class="m-0 font-weight-bold text-light pl-1" style="background-color:slategray">Completed:</p>
+                <asp:CheckBox ID="TaskIsCompletedCheckBox" runat="server" CssClass="m-2 p-1 border-secondary" Checked='<%# Bind("TaskIsCompleted") %>' TextMode="DateTime" />               
                 <br />
-                TaskIsCompleted:
-                <asp:CheckBox ID="TaskIsCompletedCheckBox" runat="server" Checked='<%# Bind("TaskIsCompleted") %>' />
-                <br />
-                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandArgument='<%# Bind("TaskID") %>' CommandName="Update" Text="Update" />
-                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                <div class="col text-center my-4" style="width:280px;">                    
+                    <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandArgument='<%# Bind("TaskID") %>' CommandName="Update" Text="Update" CssClass="btn btn-info mx-1 d-inline" />
+                    <asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" CssClass="btn btn-info mx-1 d-inline" />
+                </div>
             </EditItemTemplate>
             <ItemTemplate>
-                TaskName:
-                <asp:Label ID="TaskNameLabel" runat="server" Text='<%# Bind("TaskName") %>' />
+                <p class="m-0 font-weight-bold text-light pl-1" style="background-color:slategray">Task:</p>
+                <asp:TextBox ID="TaskNameLabel" runat="server" CssClass="border-0 mb-3 mt-1 p-1 w-100" Text='<%# Bind("TaskName") %>' Enabled="False" TextMode="MultiLine" />
                 <br />
-                TaskDescription:
-                <asp:Label ID="TaskDescriptionLabel" runat="server" Text='<%# Bind("TaskDescription") %>' />
+                <p class="m-0 font-weight-bold text-light pl-1" style="background-color:slategray">Description:</p>
+                <asp:TextBox ID="TaskDescriptionLabel" runat="server" CssClass="border-0 mb-3 mt-1 p-1 w-100" style="height:200px;" Text='<%# Bind("TaskDescription") %>' Enabled="False" TextMode="MultiLine" />
                 <br />
-                TaskDateOfCreation:
-                <asp:Label ID="TaskDateOfCreationLabel" runat="server" Text='<%# Bind("TaskDateOfCreation") %>' />
+                <p class="m-0 font-weight-bold text-light pl-1" style="background-color:slategray">Created:</p>
+                <asp:TextBox ID="TaskDateOfCreationLabel" runat="server" CssClass="border-0 mb-3 mt-1 p-1 w-100" Text='<%# Bind("TaskDateOfCreation") %>' Enabled="False" TextMode="DateTime" />
                 <br />
-                TaskDueDate:
-                <asp:Label ID="TaskDueDateLabel" runat="server" Text='<%# Bind("TaskDueDate") %>' />
+                <p class="m-0 font-weight-bold text-light pl-1" style="background-color:slategray">Deadline:</p>
+                <asp:TextBox ID="TaskDueDateLabel" runat="server" CssClass="border-0 mb-3 mt-1 p-1 w-100" Text='<%# Bind("TaskDueDate") %>' Enabled="False" TextMode="DateTime" />
                 <br />
-                TaskIsCompleted:
-                <asp:CheckBox ID="TaskIsCompletedCheckBox" runat="server" Checked='<%# Bind("TaskIsCompleted") %>' Enabled="false" />
+                <p class="m-0 font-weight-bold text-light pl-1" style="background-color:slategray">Completed:</p>
+                <asp:CheckBox ID="TaskIsCompletedCheckBox" runat="server" CssClass="m-2 p-1" Checked='<%# Bind("TaskIsCompleted") %>' Enabled="false" />
                 <br />
                 <div class="col text-center" style="width:280px;">
                     <asp:LinkButton ID="EditButton" runat="server" Text="Edit" CssClass="btn btn-info m-5" OnClick="EditButton_Click" />
