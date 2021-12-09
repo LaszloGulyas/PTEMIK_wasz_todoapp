@@ -27,7 +27,8 @@
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSourceTasksCompleted" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [TaskName], [TaskDateOfCreation], [TaskDueDate], [TaskIsCompleted] FROM [Tasks] WHERE ([TaskIsCompleted] = @TaskIsCompleted)">
+        <asp:SqlDataSource ID="SqlDataSourceTasksCompleted" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
+            SelectCommand="SELECT [TaskName], [TaskDateOfCreation], [TaskDueDate], [TaskIsCompleted] FROM [Tasks] WHERE ([TaskIsCompleted] = @TaskIsCompleted) ORDER BY [TaskDateOfCreation] DESC" >
             <SelectParameters>
                 <asp:Parameter DefaultValue="True" Name="TaskIsCompleted" Type="Boolean" />
             </SelectParameters>
