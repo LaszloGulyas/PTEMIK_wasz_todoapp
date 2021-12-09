@@ -10,6 +10,7 @@ Tech stack:
 Feature list:
 - ASP.NET Controls, WebForms
 - EventHandlers (PageLoad, OnClick, ...)
+- Validations (server side, custom)
 - MasterPage, SiteMap navigation
 - Request/Response calls (QueryString, redirection)
 - Bootstrap classes + inline styling
