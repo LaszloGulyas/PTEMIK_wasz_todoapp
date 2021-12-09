@@ -5,18 +5,30 @@
         <asp:FormView ID="FormViewTaskDetails" runat="server" DataKeyNames="TaskID" DataSourceID="SqlDataSourceTaskDetails">
             <EditItemTemplate>
                 <p class="m-0 font-weight-bold text-light pl-1" style="background-color:slategray">Task:</p>
-                <asp:TextBox ID="TaskNameTextBox" runat="server" CssClass="mb-3 mt-1 p-1 w-100 border-secondary" Text='<%# Bind("TaskName") %>' TextMode="MultiLine" />
+                <asp:TextBox ID="TaskNameTextBox" runat="server" CssClass="mb-0 mt-1 p-1 w-100 border-secondary" Text='<%# Bind("TaskName") %>' TextMode="MultiLine" />
+                <asp:CustomValidator ID="CVTaskName" runat="server" CssClass="text-danger" Display="Dynamic" ControlToValidate="TaskNameTextBox"
+                    ErrorMessage="Task name can't be empty or longer than 50 characters"
+                    OnServerValidate="TaskNameTextBox_Validate" ValidateEmptyText="true" >
+                </asp:CustomValidator>
                 <br />
-                <p class="m-0 font-weight-bold text-light pl-1" style="background-color:slategray">Description:</p>
-                <asp:TextBox ID="TaskDescriptionTextBox" runat="server" CssClass="mb-3 mt-1 p-1 w-100 border-secondary" style="height:200px;" Text='<%# Bind("TaskDescription") %>' TextMode="MultiLine" />
+                <p class="m-0 mt-3 font-weight-bold text-light pl-1" style="background-color:slategray">Description:</p>
+                <asp:TextBox ID="TaskDescriptionTextBox" runat="server" CssClass="mb-0 mt-1 p-1 w-100 border-secondary" style="height:200px;" Text='<%# Bind("TaskDescription") %>' TextMode="MultiLine" />
+                <asp:CustomValidator ID="CVTaskDescription" runat="server" CssClass="text-danger" Display="Dynamic" ControlToValidate="TaskDescriptionTextBox"
+                    ErrorMessage="Description can't be longer than 500 characters"
+                    OnServerValidate="TaskDescriptionTextBox_Validate" ValidateEmptyText="false" >
+                </asp:CustomValidator>
                 <br />
-                <p class="m-0 font-weight-bold text-light pl-1" style="background-color:slategray">Created:</p>
-                <asp:TextBox ID="TaskDateOfCreationTextBox" runat="server" CssClass="border-0 mb-3 mt-1 p-1 w-100" Text='<%# Bind("TaskDateOfCreation") %>' ReadOnly="true" Enabled="false" />
+                <p class="m-0 mt-3 font-weight-bold text-light pl-1" style="background-color:slategray">Created:</p>
+                <asp:TextBox ID="TaskDateOfCreationTextBox" runat="server" CssClass="border-0 mb-0 mt-1 p-1 w-100" Text='<%# Bind("TaskDateOfCreation") %>' ReadOnly="true" Enabled="false" />
                 <br />
-                <p class="m-0 font-weight-bold text-light pl-1" style="background-color:slategray">Deadline:</p>
-                <asp:TextBox ID="TaskDueDateTextBox" runat="server" CssClass="mb-3 mt-1 p-1 w-100" Text='<%# Bind("TaskDueDate") %>' TextMode="DateTime" />
+                <p class="m-0 mt-3 font-weight-bold text-light pl-1" style="background-color:slategray">Deadline:</p>
+                <asp:TextBox ID="TaskDueDateTextBox" runat="server" CssClass="mb-0 mt-1 p-1 w-100" Text='<%# Bind("TaskDueDate") %>' TextMode="DateTime" />
+                <asp:CustomValidator ID="CVTaskDueDate" runat="server" CssClass="text-danger" Display="Dynamic" ControlToValidate="TaskDueDateTextBox"
+                    ErrorMessage="Deadline can't be empty and must have valid date/time format"
+                    OnServerValidate="TaskDueDateTextBox_Validate" ValidateEmptyText="true" >
+                </asp:CustomValidator>
                 <br />                
-                <p class="m-0 font-weight-bold text-light pl-1" style="background-color:slategray">Completed:</p>
+                <p class="m-0 mt-3 font-weight-bold text-light px-1 custom-control-inline" style="background-color:slategray; width:85%;">Completed:</p>
                 <asp:CheckBox ID="TaskIsCompletedCheckBox" runat="server" CssClass="m-2 p-1 border-secondary" Checked='<%# Bind("TaskIsCompleted") %>' TextMode="DateTime" />               
                 <br />
                 <div class="col text-center my-4" style="width:280px;">                    
@@ -37,11 +49,11 @@
                 <p class="m-0 font-weight-bold text-light pl-1" style="background-color:slategray">Deadline:</p>
                 <asp:TextBox ID="TaskDueDateLabel" runat="server" CssClass="border-0 mb-3 mt-1 p-1 w-100" Text='<%# Bind("TaskDueDate") %>' Enabled="False" TextMode="DateTime" />
                 <br />
-                <p class="m-0 font-weight-bold text-light pl-1" style="background-color:slategray">Completed:</p>
-                <asp:CheckBox ID="TaskIsCompletedCheckBox" runat="server" CssClass="m-2 p-1" Checked='<%# Bind("TaskIsCompleted") %>' Enabled="false" />
+                <p class="m-0 font-weight-bold text-light px-1 custom-control-inline" style="background-color:slategray; width:85%;">Completed:</p>
+                <asp:CheckBox ID="TaskIsCompletedCheckBox" runat="server" CssClass="m-2 p-1 d-inline" Checked='<%# Bind("TaskIsCompleted") %>' Enabled="false" />
                 <br />
                 <div class="col text-center" style="width:280px;">
-                    <asp:LinkButton ID="EditButton" runat="server" Text="Edit" CssClass="btn btn-info m-5" OnClick="EditButton_Click" />
+                    <asp:LinkButton ID="EditButton" runat="server" Text="Edit" CssClass="btn btn-info m-1 mt-3" OnClick="EditButton_Click" />
                 </div>
             </ItemTemplate>
         </asp:FormView>
